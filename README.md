@@ -24,8 +24,8 @@ Now assume you have implemented a simple api as following:
 
 ```go
 func main() {
-h := server.Default()
-h.Use(accessLog.Logger())
-h.Spin()
+    h := server.Default()
+    h.Use(accessLog.Logger())
+    h.Spin()
 }
 ```
