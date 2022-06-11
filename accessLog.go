@@ -1,4 +1,4 @@
-package middleware
+package accessLog
 
 import (
 	"context"
@@ -32,6 +32,7 @@ const (
 	reset   = "\033[0m"
 )
 
+var DefaultWriter io.Writer = os.Stdout
 var consoleColorMode = autoColor
 
 // LoggerConfig defines the config for Logger middleware.
@@ -193,7 +194,7 @@ func LoggerWithConfig(conf LoggerConfig) app.HandlerFunc {
 
 	out := conf.Output
 	if out == nil {
-		out = os.Stdout
+		out = DefaultWriter
 	}
 
 	notLogged := conf.SkipPaths
