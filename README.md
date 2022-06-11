@@ -20,7 +20,7 @@ import "github.com/FlameMida/accessLog" // hertz-accessLog middleware
 
 ### Quick start
 
-Now assume you have implemented a simple api as following:
+#### Run a default logger print in terminal
 
 ```go
 func main() {
